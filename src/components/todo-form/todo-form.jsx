@@ -8,6 +8,7 @@ export const TodoForm = () => {
 
   const handleAddTodo = () => {
     // Fin an ability to add new task
+    setTodos([...todos, { id: todos.length, label: task, checked: false }]);
   };
 
   const handleKeyUp = (e) => {
