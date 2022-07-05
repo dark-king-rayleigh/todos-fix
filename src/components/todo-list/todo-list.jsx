@@ -13,6 +13,15 @@ export const TodoList = () => {
 
   const toggleCheck = (id) => {
     // Fix an ability to toggle task
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          // eslint-disable-next-line no-param-reassign
+          todo.checked = !todo.checked;
+        }
+        return todo;
+      }),
+    );
   };
 
   const handleKeyUp = (e, id) => {
@@ -20,8 +29,6 @@ export const TodoList = () => {
       toggleCheck(id);
     }
   };
-
-  console.log('todos', todos);
 
   return (
     <div className="todo-list">
